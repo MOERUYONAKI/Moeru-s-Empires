@@ -6,7 +6,7 @@
 
 import discord
 from random import *
-from kingdoms import *
+from Modules.kingdoms import *
 # from empire import Moerus_kd
 from discord import *
 from discord.ext import commands
