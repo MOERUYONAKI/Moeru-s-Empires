@@ -102,5 +102,7 @@ async def on_ready() :
 
 
 # - Sécurisation du Token -
-from unkai_tk import TOKENZ
-bot.run(TOKENZ)
+token = open("C:\\Users\\1bbor\\OneDrive\\Documents\\GitHub\\Tokens.txt", 'r')
+TOKEN = token.readline()
+bot.run(TOKEN)
+token.close()
