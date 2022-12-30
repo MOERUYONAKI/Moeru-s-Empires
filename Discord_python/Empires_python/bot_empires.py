@@ -4,7 +4,7 @@
 # - - - - - I M P O R T S - - - - -
 
 
-import Discord_python.discord as discord
+import discord
 from random import *
 from Moeru_modules.kingdoms import *
 from Moeru_modules.empire import Moerus_kd
