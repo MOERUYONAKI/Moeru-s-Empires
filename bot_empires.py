@@ -6,8 +6,8 @@
 
 import discord
 from random import *
-from Modules.kingdoms import *
-from Modules.empire import Moerus_kd
+from Moeru_modules.kingdoms import *
+from Moeru_modules.empire import Moerus_kd
 from discord import *
 from discord.ext import commands
 from discord.ext.commands.bot import Bot
