@@ -6,7 +6,7 @@ import re
 from collections import namedtuple
 from typing import Any, Callable, Dict, Iterable, List, Tuple  # noqa
 
-from .abc import AbstractAccessLogger
+from abc import AbstractAccessLogger
 from .web_request import BaseRequest
 from .web_response import StreamResponse
 
