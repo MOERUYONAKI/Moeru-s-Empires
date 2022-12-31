@@ -44,7 +44,7 @@ from typing import (
     Union,
 )
 
-import aiohttp
+import Discord_python.aiohttp as aiohttp
 
 from .user import User, ClientUser
 from .invite import Invite
@@ -78,7 +78,7 @@ if TYPE_CHECKING:
     from typing_extensions import Self
     from types import TracebackType
     from .types.guild import Guild as GuildPayload
-    from .abc import SnowflakeTime, Snowflake, PrivateChannel
+    from abc import SnowflakeTime, Snowflake, PrivateChannel
     from .guild import GuildChannel
     from .channel import DMChannel
     from .message import Message
