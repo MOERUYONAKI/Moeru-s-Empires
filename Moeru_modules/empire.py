@@ -10,4 +10,4 @@ Kitsune.add_city2(Rusanor)
 Yona.add_kingdom(Kitsune)
 
 Moerus_kd = Yona.show_cities()
-print(Moerus_kd)
+# print(Moerus_kd)
