@@ -4,14 +4,14 @@
 # - - - - - I M P O R T S - - - - -
 
 
-import discord
+import Discord_python.discord as discord
 from random import *
 from Moeru_modules.kingdoms import *
 from Moeru_modules.empire import Moerus_kd
-from discord import *
-from discord.ext import commands
-from discord.ext.commands.bot import Bot
-from discord.ext.commands import has_permissions
+from Discord_python.discord import *
+from Discord_python.discord.ext import commands
+from Discord_python.discord.ext.commands.bot import Bot
+from Discord_python.discord.ext.commands import has_permissions
 
 
 # - - - - - S C R I P T _ P R I N C I P A L - - - - -
