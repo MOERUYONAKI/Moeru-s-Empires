@@ -94,7 +94,7 @@ class City():
         def check_stat(self):
             return City.Status.status[self.status]
 
-# - - - - - - - - - - - - - - - - - - - - 
+    # - - - - - - - - - - - - - - - - - - - - 
 
 class Kingdom():
     """Groupe de villes (class City)"""
@@ -208,3 +208,8 @@ class Kingdoms():
                 self.cities.remove(city)
 
         return texte
+    
+    
+# - - - - - F O N C T I O N S - - - - -
+
+
