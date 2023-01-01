@@ -1,4 +1,4 @@
-from Moeru_modules.kingdoms import *
+from kingdoms import *
 
 Yona = Kingdoms("Yona", type = "Seigneurie")
 Firae = City('Firea', 6, 'capital') # Dirigée par Lord Moeru
