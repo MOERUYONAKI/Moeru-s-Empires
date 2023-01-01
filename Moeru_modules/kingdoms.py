@@ -214,7 +214,7 @@ class Kingdoms():
 
 
 def get_city(city = City, owner = Kingdom, new = Kingdom):
-    if city.stat != 'capitale':
+    if city.status != 'capital':
         if city in owner.cities:
             i = owner.cities.index(city)
             owner.cities.pop(i)
