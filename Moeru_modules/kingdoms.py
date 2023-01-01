@@ -213,3 +213,16 @@ class Kingdoms():
 # - - - - - F O N C T I O N S - - - - -
 
 
+def get_city(city = City, owner = Kingdom, new = Kingdom):
+    if city.stat != 'capitale':
+        if city in owner.cities:
+            i = owner.cities.index(city)
+            owner.cities.pop(i)
+            new.add_city(city)
+            
+        else:
+            return 'Ville introuvable'
+        
+    else:
+        city.rank_downgrade()
+        get_city(city, owner, new)
