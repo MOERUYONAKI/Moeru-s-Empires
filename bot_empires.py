@@ -29,7 +29,7 @@ empires = {}
 @bot.command(name = 'new_empire')
 async def emp_create(ctx, * , names : str):
     if ctx.message.author.name not in empires.keys():
-        empires[ctx.message.author.name] = Kingdom(names)
+        empires[ctx.message.author.name] = Kingdom(name = names, cities = [])
         print(f'{ctx.message.author.name} crée un empire')
         await ctx.send(embed = discord.Embed(title = 'Nouvel empire', description = f'Vous venez de créer votre empire au nom de **{names}** !', color=0x00ffff))
 
@@ -51,7 +51,7 @@ async def city_create(ctx, * , names : str):
 async def empire_view(ctx, member : discord.Member = None):
     if member == None:
         if ctx.message.author.name in empires.keys():
-            await ctx.send(embed = discord.Embed(title = f"{ctx.message.author.name}'s empire", description = f'{empires[ctx.message.author.name].show_cities()}', color=0x00ffff))
+            await ctx.send(embed = discord.Embed(title = f"{ctx.message.author.name}'s kingdom", description = f'{empires[ctx.message.author.name].show_cities()}', color=0x00ffff))
 
         else:
             await ctx.send(f"Vous ne possédez pas d'empire")
