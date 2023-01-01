@@ -48,12 +48,20 @@ async def city_create(ctx, * , names : str):
         await ctx.send(f"Vous ne possédez pas d'empire")
 
 @bot.command(name = 'show_empire')
-async def empire_view(ctx):
-    if ctx.message.author.name in empires.keys():
-        await ctx.send(embed = discord.Embed(title = f"{ctx.message.author.name}'s empire", description = f'{empires[ctx.message.author.name].show_cities()}', color=0x00ffff))
+async def empire_view(ctx, member : discord.Member = None):
+    if member == None:
+        if ctx.message.author.name in empires.keys():
+            await ctx.send(embed = discord.Embed(title = f"{ctx.message.author.name}'s empire", description = f'{empires[ctx.message.author.name].show_cities()}', color=0x00ffff))
 
+        else:
+            await ctx.send(f"Vous ne possédez pas d'empire")
+            
     else:
-        await ctx.send(f"Vous ne possédez pas d'empire")
+        if member.name in empires.keys():
+            await ctx.send(embed = discord.Embed(title = f"{member.name}'s empire", description = f'{empires[member.name].show_cities()}', color=0x00ffff))
+
+        else:
+            await ctx.send(f"Cet utilisateur ne possède pas d'empire")
 
 @bot.command(name = 'lvl_upgrade')
 async def up_city(ctx, * , name : str):
