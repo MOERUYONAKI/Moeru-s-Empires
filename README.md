@@ -17,3 +17,8 @@ To use the bot, you need to have discord.py and the token of your bot.
 
 Commande d'attaque de villes / arrivé du multijoueur  
 système de gains (or et troupes)  
+
+## 3 - Contributeurs
+
+**Créateur du bot** - [MOERUYONAKI](https://github.com/MOERUYONAKI)  
+**Testeur du bot** - [Xanark](https://github.com/Xanark)  
