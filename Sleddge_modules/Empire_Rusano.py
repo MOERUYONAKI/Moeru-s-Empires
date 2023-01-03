@@ -1,4 +1,6 @@
-from Moeru_modules.kingdoms import *
+from Moeru_modules import kingdoms as md
 
-Kumiho = Kingdoms("Kumiho", type="Duché")
-Shintō = City
+Kumiho = md.Kingdoms("Kumiho", type="Duché")
+Rusanor = md.City('Rusanor', 5, 'capital')
+Shinto = md.City('Shintō', 4)
+print(Kumiho.md.show_cities)
