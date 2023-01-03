@@ -2,7 +2,7 @@ from kingdoms import *
 
 test = City('test')
 Yona = Kingdom("Yona", type = "Seigneurie", cities = [test])
-Firae = City('Firea', 6, 'capital')
+Firae = City('Firae', 6, 'capital')
 Yona.add_city2(Firae)
 
 Test = Kingdom("Test", type = "Seigneurie")
