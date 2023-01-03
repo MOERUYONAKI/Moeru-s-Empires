@@ -10,4 +10,14 @@ bot = commands.Bot(command_prefix="D!", intents = intents)
 async def on_ready():
     print("ready")
 
+@bot.event
+async def on_message(message):
+    print(message.content)
+
+@bot.event
+async def pong(message):
+    if message.content.lower() == "ping":
+        await message.channel.send("pong")
+
+
 bot.run(str(token_f))
