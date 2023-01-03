@@ -1,5 +1,6 @@
 import discord 
 from discord.ext import commands
+from token_foxy import *
 
 intents = discord.Intents.all()
 intents.members = True
@@ -9,4 +10,4 @@ bot = commands.Bot(command_prefix="D!", intents = intents)
 async def on_ready():
     print("ready")
 
-bot.run("MTAyMzcwMTk5MTU4MDUwNDA3NA.G6iadh.lV1sMDk1uILSrEnuJZsurWQz8Dbg3gNpdSZSOQ")
+bot.run(str(token_f))
