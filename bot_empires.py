@@ -114,7 +114,11 @@ try:
     token = open("C:\\Users\\1bbor\\OneDrive\\Documents\\GitHub\\Tokens.txt", 'r')
     
 except:
-    token = open("C:\\Users\\lduma\\Desktop\\developement\\dev\\Tokens.txt", 'r')
+    try:
+        token = open("C:\\Users\\lduma\\Desktop\\developement\\dev\\Tokens.txt", 'r')
+        
+    except:
+        token = open("C:\DocBot\Tokens.txt", 'r')
     
 TOKEN = token.readline()
 bot.run(TOKEN)
