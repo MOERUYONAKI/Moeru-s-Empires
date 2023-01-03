@@ -21,4 +21,4 @@ système de gains (or et troupes)
 ## 3 - Contributeurs
 
 **Créateur du bot** - [MOERUYONAKI](https://github.com/MOERUYONAKI)  
-**Testeur du bot** - [Xanark](https://github.com/Xanark)  
+**Testeurs du bot** - [Xanark](https://github.com/Xanark) / [Rusano](https://github.com/Sleddge)  
