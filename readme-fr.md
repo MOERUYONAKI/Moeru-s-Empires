@@ -1,7 +1,7 @@
 # Moeru's empires
 
-The place of the discord bot Empires of the moeru's squad.
-To use the bot, you need to have discord.py and the token of your bot.  
+Le repository du bot discord Empires of the moeru's squad.  
+Pour utiliser le bot, vous devez avoir discord.py et le token de votre bot.  
 > *Lien du serveur associé : [Moeru's empire](https://discord.gg/zD5e8b5pkA)*
 
 ## 1 - Commandes
@@ -17,6 +17,7 @@ To use the bot, you need to have discord.py and the token of your bot.
 
 Commande d'attaque de villes / arrivé du multijoueur  
 système de gains (or et troupes)  
+Commandes slash  
 
 ## 3 - Contributeurs
 
