@@ -1,4 +1,5 @@
-# Moeru-s-Empires
+# Moeru's Empires
+
 [ Project Empires Alpha ]
 
 ## Readme languages
