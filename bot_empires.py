@@ -8,6 +8,7 @@ import discord.__main__ as discord
 from random import *
 from Moeru_modules.kingdoms import *
 from Moeru_modules.empire import Moerus_kd
+from Moeru_modules.rolls import *
 from discord.__main__ import *
 from discord.ext import commands
 from discord.ext.commands.bot import Bot
@@ -97,6 +98,20 @@ async def gold_and_troops(ctx):
 
     else:
         await ctx.send(f"Vous ne possédez pas d'empire")  
+
+@bot.command(name = 'roll')
+async def katsu_roll(ctx, msg):
+    roll = Katsu_roll(msg)
+    cmd = ''
+    for elt in roll[0]:
+        cmd += str(elt)
+        
+    result = roll[1]
+    if msg[0] == 'd':
+        await ctx.send(f'`# {result[1]}\nDétails : {cmd[1 : len(cmd) - 1]}`')
+    
+    else:
+        await ctx.send(f'`# {result[1]}\nDétails : {cmd}`')
 
 
 # - - - - - - - - - - - - - - - - - - - - 
