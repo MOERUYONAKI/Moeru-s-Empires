@@ -56,8 +56,13 @@ def Katsu_roll(cmd : str):
         # first assembling (rolls number)
         if i > 0:
             first = ""
-            for elt in command[0 : i - 1]:
-                first += str(elt)
+            for idx in range(i):
+                elt = command[idx]
+                if type(elt) is int:
+                    first += str(elt)
+                    
+                else:
+                    break
                 
             first = int(first)
             
@@ -65,31 +70,36 @@ def Katsu_roll(cmd : str):
             first = 1
         
         # roll check (if number after "d" is 100)
-        size = ""
-        if cmd_size >= i + 3:
-            for elt in command[i + 1 : i + 3]:
+        if cmd_size > i:
+            size = ""
+            for idx in range(i + 1, len(command)):
+                elt = command[idx]
                 if type(elt) is int:
                     size += str(elt)
                     
                 else:
-                    return f'CommandError : invalide dice size, size must be "100"'
-              
+                    break
+            
             if int(size) != 100:
                 return f'CommandError : invalide dice size, size must be "100"'
-            
-        elif cmd_size > i + 3:
+                
+            if cmd_size > i + 3:
                 if type(command[i + 4]) is int:
                     return f'CommandError : invalide dice size, size must be "100"'
-                 
+                
         else:
-            return f'CommandError : invalide dice size, size must be "100"'
+            return f'CommandError : cannot find any dice size'
             
         # bonus assembling (with "+" and "-")
         def bonus_check(bns : list, i : int): # return the bonus value (without use "+" or "-")
             bonus = ""
-            for elt in command[i + 1 : len(command) - 1]:
+            for idx in range(i + 1, len(command)):
+                elt = command[idx]
                 if type(elt) is int:
                     bonus += str(elt)
+                    
+                else:
+                    break
                 
             return int(bonus)
                 
@@ -111,7 +121,14 @@ def Katsu_roll(cmd : str):
         
         # final command (assembled)
         command = [first, "d", 100, bonus]
-        return command
+        
+        finals = []
+        for i in range(first):
+            roll = basic_roll(100)
+            result = roll + bonus
+            finals.append([roll, result])
+            
+        return [command, finals]
    
-# tests     
-print(Katsu_roll("d100"))
+# tests
+print(Katsu_roll("d100-5"))
