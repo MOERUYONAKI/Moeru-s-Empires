@@ -114,13 +114,19 @@ def Katsu_roll(cmd : str):
             for idx in bonus_index:
                 if command[idx] == "+":
                     bonus += bonus_check(command, idx)
-                    
-            else:
+                  
                 if command[idx] == "-":
                     bonus -= bonus_check(command, idx)
         
         # final command (assembled)
-        command = [first, "d", 100, bonus]
+        if bonus > 0:
+            command = [first, "d", 100, f'+{bonus}']
+            
+        elif bonus < 0:
+            command = [first, "d", 100, bonus]
+            
+        else:
+            command = [first, "d", 100, None]
         
         finals = []
         for i in range(first):
@@ -130,5 +136,48 @@ def Katsu_roll(cmd : str):
             
         return [command, finals]
    
+def roll_pourcents(arg1 : int = 50, arg2 : int = 50):
+    total = arg1 + arg2
+    if total == 100:
+        nbr = rdm.randint(0,100)
+        if nbr <= arg1:
+            return f'Réussite *({arg1}%)*'
+            
+        else:
+            return f'Échec *({arg1}%)*'
+            
+        print(f'{ctx.message.author} tente un roll !')
+            
+    elif (arg1 < 0 and arg2 > 0) or (arg1 > 0 and arg2 < 0):
+        if arg1 < 0 and arg2 > 0:
+            arg1 = -arg1
+            roll_pourcents(arg1, arg2)  
+            
+        else:
+            arg2 = -arg2
+            roll_pourcents(arg1, arg2)  
+            
+    elif arg1 < 0 and arg2 < 0:
+        arg1 = -arg1
+        arg2 = -arg2
+        roll_pourcents(arg1, arg2)  
+        
+    elif arg1 == 0 and arg2 == 0:
+        return 'Valeurs incorrectes'
+        
+    else:
+        arg1 = round(arg1 * 100 / total, 0)
+        arg2 = round(arg2 * 100 / total, 0)
+        total = arg1 + arg2
+        if total == 99:
+            arg1 += 0.5
+            arg2 += 0.5
+            
+        elif total == 101:
+            arg1 += 0.5
+            arg2 += 0.5
+            
+        roll_pourcents(arg1, arg2)  
+
 # tests
-print(Katsu_roll("d100-5"))
+# print(Katsu_roll("d100-5"))

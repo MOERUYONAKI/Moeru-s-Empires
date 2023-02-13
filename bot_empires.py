@@ -100,12 +100,17 @@ async def gold_and_troops(ctx):
         await ctx.send(f"Vous ne possédez pas d'empire")  
 
 @bot.command(name = 'roll')
-async def katsu_roll(ctx, msg):
+async def katsu_roll(ctx, msg): # Here for tests
     roll = Katsu_roll(msg)
     if type(roll) is list:
         cmd = ''
-        for elt in roll[0]:
-            cmd += str(elt)
+        if roll[0][3] != None:
+            for elt in roll[0]:
+                cmd += str(elt)
+                
+        else:
+            for elt in roll[0][0 : 3]:
+                cmd += str(elt)
         
         results = 0
         rolls = ""
@@ -117,12 +122,7 @@ async def katsu_roll(ctx, msg):
             else:
                 rolls += ", " + str(roll[1][i][0])
             
-            
-        if msg[0] == 'd':
-            await ctx.send(f'```# {results}\nDétails : {cmd[1 : len(cmd)]} ({rolls})```')
-        
-        else:
-            await ctx.send(f'```# {results}\nDétails : {cmd} ({rolls})```')
+        await ctx.send(f'```# {results}\nDétails : {cmd} ({rolls})```')
             
     else:
         await ctx.send(roll)
