@@ -7,7 +7,7 @@
 import discord.__main__ as discord
 from random import *
 from Moeru_modules.kingdoms import *
-# from Moeru_modules.empire import Moerus_kd
+from Moeru_modules.empire import Moerus_kd
 from Moeru_modules.rolls import *
 from discord.__main__ import *
 from discord.ext import commands
@@ -15,7 +15,7 @@ from discord.ext.commands.bot import Bot
 from discord.ext.commands import has_permissions
 
 
-# - - - - - S C R I P T _ P R I N C I P A L - - - - -
+# - - - - - S C R I P T   P R I N C I P A L - - - - -
 
 
 intents = discord.Intents.all()
@@ -25,7 +25,9 @@ bot = commands.Bot(command_prefix = '!', description = 'kingdoms maker', intents
 
 empires = {}
 
+
 # - - - - - - - - - - - - - - - - - - - - 
+
 
 @bot.command(name = 'new_empire')
 async def emp_create(ctx, * , names : str):
@@ -129,6 +131,7 @@ async def katsu_roll(ctx, msg): # Here for tests
 
 
 # - - - - - - - - - - - - - - - - - - - - 
+
 
 @bot.event
 async def on_ready() :
