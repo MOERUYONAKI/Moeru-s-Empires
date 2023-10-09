@@ -140,14 +140,14 @@ async def on_ready() :
 
 # - Sécurisation du Token -
 try:
-    token = open("C:\\Users\\1bbor\\OneDrive\\Documents\\GitHub\\Tokens.txt", 'r')
+    token = open('C:\\Users\\1bbor\\Documents\\GitHub\\Tokens.txt', 'r')
     
 except:
     try:
         token = open("C:\\Users\\lduma\\Desktop\\developement\\dev\\Tokens.txt", 'r')
         
     except:
-        token = open("C:\DocBot\Tokens.txt", 'r')
+        token = open("C:\\DocBot\\Tokens.txt", 'r')
     
 TOKEN = token.readline()
 bot.run(TOKEN)
