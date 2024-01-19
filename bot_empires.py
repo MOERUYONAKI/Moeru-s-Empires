@@ -101,6 +101,10 @@ async def gold_and_troops(ctx):
     else:
         await ctx.send(f"Vous ne possédez pas d'empire")  
 
+
+# - - -  T E S T I N G  - - - 
+
+
 @bot.command(name = 'roll')
 async def katsu_roll(ctx, msg): # Here for tests
     roll = Katsu_roll(msg)
